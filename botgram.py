@@ -39,6 +39,7 @@ async def handle_text(message: types.Message):
 
 
 async def scheduler():
+    aioschedule.every().day.at("02:30").do(FindWeather)
     aioschedule.every().day.at("12:00").do(FindWeather)
     while True:
         await aioschedule.run_pending()

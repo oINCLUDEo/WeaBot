@@ -83,6 +83,9 @@ async def scheduler():
         await asyncio.sleep(1)
 
 
+@dp.callback_query(F.data.startswitch())
+
+
 @dp.callback_query(F.data == 'main_menu')
 async def main_keyboard_menu(callback: types.CallbackQuery):
     await callback.message.edit_reply_markup(reply_markup=inline_menu_buttons.as_markup())
